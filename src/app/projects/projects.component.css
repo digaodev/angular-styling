@@ -1,0 +1,21 @@
+.loading-bar {
+  width: 200px;
+  height: 20px;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.loading-bar-element {
+  height: 100%;
+  background-color: deepskyblue;
+  animation: loadingAnimation 1s ease-in-out infinite;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
