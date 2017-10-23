@@ -4,13 +4,13 @@ import { Project } from './project.model';
 
 import { ProjectsService } from './projects.service';
 
-import { markedTrigger } from './animations';
+import { itemTrigger, markedTrigger } from './animations';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
-  animations: [markedTrigger]
+  animations: [markedTrigger, itemTrigger]
 })
 export class ProjectsComponent implements OnInit {
   projects: Project[];
@@ -40,6 +40,6 @@ export class ProjectsComponent implements OnInit {
 
   onProjectCreated(project: Project) {
     this.createNew = false;
-    this.projects.push(project);
+    this.projects.unshift(project);
   }
 }
