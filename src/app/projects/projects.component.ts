@@ -4,10 +4,13 @@ import { Project } from './project.model';
 
 import { ProjectsService } from './projects.service';
 
+import { markedTrigger } from './animations';
+
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
+  animations: [markedTrigger]
 })
 export class ProjectsComponent implements OnInit {
   projects: Project[];

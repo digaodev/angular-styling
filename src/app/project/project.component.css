@@ -4,7 +4,7 @@
   box-shadow: 0 0 4px 1px #ccc;
   margin: 2rem;
   padding: 1rem;
-  transition: all .2s ease-in;
+  /* transition: all .2s ease-in; */
 }
 
 :host(.inactive) {
@@ -13,21 +13,21 @@
   opacity: 0.6;
 }
 
-:host(.marked) {
+/* :host(.marked) {
   background-color: lightblue;
   box-shadow: 0 4px 2px rgb(163, 212, 255) ;
-}
+} */
 
 .form-control {
   display: inline-block;
   width: 50%;
 }
 
-:host(.animateMarked) {
+/* :host(.animateMarked) {
   animation: markedAnimation .4s ease-in-out forwards;
-}
+} */
 
-@keyframes markedAnimation {
+/* @keyframes markedAnimation {
   0% {
     transform: scale(1);
   }
@@ -37,4 +37,4 @@
   100% {
     transform: scale(1);
   }
-}
+} */
