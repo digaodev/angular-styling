@@ -5,21 +5,25 @@ import { Project } from './project.model';
 
 import { ProjectsService } from './projects.service';
 
-import { itemStateTrigger, markedStateTrigger, slideStateTrigger } from './animations';
+import { itemStateTrigger, markedStateTrigger, slideStateTrigger, listStateTrigger } from './animations';
 import { routeFadeStateTrigger, routeSlideStateTrigger } from './../shared/route-animations';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
-  animations: [markedStateTrigger, itemStateTrigger, slideStateTrigger, routeFadeStateTrigger, routeSlideStateTrigger]
+  animations: [markedStateTrigger,
+    itemStateTrigger,
+    slideStateTrigger,
+    // routeFadeStateTrigger,
+    routeSlideStateTrigger,
+    listStateTrigger]
 })
 export class ProjectsComponent implements OnInit {
   // @HostBinding('@routeFadeState') routeAnimation = true;
   @HostBinding('@routeSlideState') routeAnimation = true;
 
   projects: Project[];
-  displayedProjects: Project[] = [];
   markedPrjIndex = 0;
   progress = 'progressing';
   createNew = false;
@@ -29,13 +33,10 @@ export class ProjectsComponent implements OnInit {
   ngOnInit() {
     this.prjService.loadProjects()
       .subscribe(
-        (prj: Project[]) => {
-          this.progress = 'finished';
-          this.projects = prj;
-          if (this.projects.length >= 1) {
-            this.displayedProjects.push(this.projects[0]);
-          }
-        }
+      (prj: Project[]) => {
+        this.progress = 'finished';
+        this.projects = prj;
+      }
       );
   }
 
