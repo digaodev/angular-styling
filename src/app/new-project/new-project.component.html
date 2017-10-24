@@ -36,7 +36,9 @@
   <button
     type="submit"
     [disabled]="!f.valid"
-    class="btn btn-success">Create Project</button>
+    [@buttonState]="f.invalid && f.touched ? 'invalid' : 'null'"
+    [@buttonState]="f.valid && f.touched ? 'valid' : 'null'"
+    class="btn btn-basic">Create Project</button>
   <button
     type="button"
     class="btn btn-danger"

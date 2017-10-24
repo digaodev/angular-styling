@@ -3,10 +3,13 @@ import { NgForm } from '@angular/forms';
 
 import { Project } from '../projects/project.model';
 
+import { buttonStateTrigger } from './animations';
+
 @Component({
   selector: 'app-new-project',
   templateUrl: './new-project.component.html',
   styleUrls: ['./new-project.component.css'],
+  animations: [buttonStateTrigger]
 })
 export class NewProjectComponent implements OnInit {
   @Output() creationCancelled = new EventEmitter<void>();
